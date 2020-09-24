@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm a radio host</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="js/gorgyclock/clock.js"></script>
+</head>
+
+<body>
+
+    <div class="popup-home animate__animated">
+        <span id="message1" class="animate__animated animate__bounceIn">Hello !</span>
+        <span id="message2" class="animate__animated animate__bounceIn">Dans quelques secondes...</span>
+        <span id="message3" class="animate__animated animate__bounceIn">Tu vas être dans la peau d'un animateur
+            radio</span>
+        <span id="message4" class="animate__animated animate__bounceIn">Tu devras annoncer cette musique</span>
+        <span id="message5" class="animate__animated animate__bounceInDown">Machine Gun Kelly - Bloody Valentine</span>
+        <span id="message6" class="animate__animated animate__bounceIn">Tu as 10 secondes de parole</span>
+
+        <button id="popup-home-start" class="animate__animated animate__bounceIn">Je suis prêt !</button>
+    </div>
+
+
+    <div class="popup-after animate__animated animate__fadeIn">
+        <span id="message7" class="animate__animated animate__bounceIn">Pas mal du tout !</span>
+        <span id="message8" class="animate__animated animate__bounceIn">Maintenant on réécoute ça ☺️</span>
+    </div>
+
+    <main>
+        <header>
+            <h1>I'm a radio host !</h1>
+            <p>Mets toi dans la peau d'un animateur radio, enregistre ta première maquette en quelques secondes avec
+                "I'm a radio host !"</p>
+        </header>
+
+
+        <div class="container">
+
+            <div class="content">
+                <div class="box">
+
+                    <div class="recordbox_title">
+                        <h2>Record box</h2>
+                        <div class="record clignotement" id="record"></div>
+                    </div>
+
+
+                    <span class="record_info" id="record_info">Enregistrement non amorcé</span>
+
+                    <div class="record_bar" id="record_bar">
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="box">
+                    <h2>Playlist</h2>
+                    <div class="player">
+                        <span class="player_meta_voie">Voie A</span>
+                        <span class="player_meta">Blinding Lights</span>
+                        <span class="player_meta">The Weeknd</span>
+                        <span class="player_timing" id="timing_end">0:19</span>
+                        <div class="progress_bar" id="progress_end"></div>
+                    </div>
+
+                    <div class="player">
+                        <span class="player_meta_voie">Voie B</span>
+                        <span class="player_meta">CAGE 10S</span>
+                        <span class="player_meta">OPENSKYRADIO</span>
+                        <span class="player_timing" id="timing_cage">0:16</span>
+                        <div class="progress_bar" id="progress_cage"></div>
+                    </div>
+
+                    <div class="player">
+                        <span class="player_meta_voie">Voie C</span>
+                        <span class="player_meta">Bloody Valentine</span>
+                        <span class="player_meta">Machine Gun Kelly</span>
+                        <span class="player_timing" id="timing_start">0:07</span>
+                        <div class="progress_bar" id="progress_start"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="content">
+
+                <div class="clock">
+                    <canvas id="studio-clock" width="100px" height="100px">
+                        Your browser does not support the HTML5 canvas tag.
+                    </canvas>
+
+                </div>
+
+                <div class="box">
+
+                    <div class="faders">
+                        <div class="console_fader">
+                            <input onchange="changevolume(end, this.value)" type="range" orient="vertical"
+                                id="end_volume" name="volume" min="0" max="1" step="0.1">
+                            <button>VOIE A</button>
+                        </div>
+                        <div class="console_fader">
+                            <input onchange="changevolume(cage, this.value)" type="range" orient="vertical"
+                                id="cage_volume" name="volume" min="0" max="1" step="0.1">
+                            <button>VOIE B</button>
+                        </div>
+                        <div class="console_fader">
+                            <input onchange="changevolume(start, this.value)" type="range" orient="vertical"
+                                id="start_volume" name="volume" min="0" max="1" step="0.1">
+                            <button>VOIE C</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        </div>
+
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
